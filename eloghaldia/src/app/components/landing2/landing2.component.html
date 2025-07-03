@@ -1,0 +1,188 @@
+
+
+
+<div class="">
+<!-- <div class="grid grid-nogutter surface-section text-800">
+    <div class="col-12 md:col-6 p-3 text-center md:text-left flex align-items-center ">
+        <section>
+            <span class="block text-6xl font-bold mb-1">Welcome to</span>
+            <div class="text-6xl text-primary font-bold mb-3">E-LOG</div>
+            <p class="mt-0 mb-4 text-700 line-height-3">
+               E-log captures and maintains daily shift logs for operational purposes. These are monitored through reports, to take optimized decisions in future.     
+            </p>
+            
+            <button routerLink="/viewreports" pButton pRipple label="View report" type="button" class="mr-3 p-button-raised"></button>
+            <button routerLink="/elogcards" pButton pRipple label="Record data" type="button" class="p-button-outlined"></button>
+        </section>
+    </div>
+    <div class="col-12 md:col-6 overflow-hidden">
+        <img src="assets/worker1.jpg" alt="Image" class="md:ml-auto block md:h-full" style="clip-path: polygon(5% 0, 100% 0%, 100% 100%, 0 100%)">
+    </div>
+</div> -->
+
+
+<div class="surface-section px-4  md:px-6 lg:px-8 text-center">
+    <div class="mb-3 font-bold text-3xl">
+        <span class="text-900">One System, </span>
+        <span class="text-blue-600">Many Locations</span>
+    </div>
+    <div class="text-700 mb-6">Capture, maintain daily shift logs, monitor through reports, take optimized decisions!</div>
+    
+</div>
+<!-- 
+<div class="surface-section px-4 py-5 md:px-6 lg:px-8">
+    <ul class="list-none p-0 m-0 flex align-items-center font-medium mb-3">
+        <li>
+            <a class="text-500 no-underline line-height-3 cursor-pointer">Application</a>
+        </li>
+        <li class="px-2">
+            <i class="pi pi-angle-right text-500 line-height-3"></i>
+        </li>
+        <li>
+            <span class="text-900 line-height-3">Analytics</span>
+        </li>
+    </ul>
+    <div class="flex align-items-start flex-column lg:justify-content-between lg:flex-row">
+        <div>
+            <div class="font-medium text-3xl text-900">Customers</div>
+            <div class="flex align-items-center text-700 flex-wrap">
+                <div class="mr-5 flex align-items-center mt-3">
+                    <i class="pi pi-users mr-2"></i>
+                    <span>332 Active Users</span>
+                </div>
+                <div class="mr-5 flex align-items-center mt-3">
+                    <i class="pi pi-globe mr-2"></i>
+                    <span>9402 Sessions</span>
+                </div>
+                <div class="flex align-items-center mt-3">
+                    <i class="pi pi-clock mr-2"></i>
+                    <span>2.32m Avg. Duration</span>
+                </div>
+            </div>
+        </div>
+        <div class="mt-3 lg:mt-0">
+            <button pButton pRipple label="Submit" class="p-button-outlined mr-2" icon="pi pi-user-plus"></button>
+            <button pButton pRipple label="Save" icon="pi pi-check"></button>
+        </div>
+    </div>
+</div> -->
+
+
+
+    <p-carousel 
+        [value]="carousalImg" 
+        [numVisible]="3" 
+        [numScroll]="1" 
+        [circular]="true" 
+        [responsiveOptions]="responsiveOptions" 
+        [autoplayInterval]="5000"
+        [showIndicators]="true"
+        [showNavigators]="true"
+        
+        >
+        <ng-template let-product pTemplate="item">
+                <div class="border-1 surface-border border-round m-2 p-3">
+                    <div class="mb-3">
+                        <div class="relative mx-auto">
+                            <img 
+                                src="{{ product.imgsrc }}" 
+                                [alt]="product.name" 
+                                class="w-full border-round" 
+                                class="carousel-image"/>
+                            <!-- <p-tag 
+                                [value]="product.inventoryStatus" 
+                                [severity]="getSeverity(product.inventoryStatus)" 
+                                class="absolute" 
+                                [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" /> -->
+                        </div>
+                    </div>
+                    <div class="mb-3 font-medium">
+                        {{ product.name }}
+                    </div>
+                    <!-- <div class="flex justify-content-between align-items-center">
+                    <div class="mt-0 font-semibold text-xl">
+                        {{ '$' + product.price }}
+                    </div>
+                        <span>
+                            <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
+                            <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
+                        </span>
+                    </div> -->
+                </div>
+            </ng-template>
+    </p-carousel>
+</div>
+
+
+<div class="bottom-fixed">
+
+<div class="bg-bluegray-900 text-gray-100 flex justify-content-between lg:justify-content-center align-items-center flex-wrap">
+    <div class="font-bold mr-8">🔥 Unable to navigate!</div>
+    <div class="align-items-center hidden lg:flex">
+        <span class="line-height-3">Contact your system admin.</span>
+    </div>
+    <a class="flex align-items-center ml-2 mr-8" (click)="showModal()">
+        <a class="text-white" href="#"><span class="underline font-bold">Learn More</span></a>
+    </a>
+    <a pRipple class="flex align-items-center no-underline justify-content-center border-circle text-gray-50 hover:bg-bluegray-700 cursor-pointer transition-colors transition-duration-150" style="width:2rem; height: 2rem">
+        <i class="pi pi-times"></i>
+    </a>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p-dialog [(visible)]="displayModal" [modal]="true" [closable]="true" [header]="'System admins'" [style]="{width: '50%'}">
+    <div class="row" > 
+        <p-table [value]="systemadmins" tableStyleClass="p-datatable-gridlines">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Location</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <!-- <th></th> -->
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-systemadmins>
+                <tr >
+                    <td class="tableborder">{{ systemadmins.location }}</td>
+                    <td class="tableborder">{{ systemadmins.name }}</td>
+                    <td class="tableborder">{{ systemadmins.email }}</td>
+                    <!-- <td></td> -->
+                </tr>
+            </ng-template>
+        </p-table>       
+    </div>
+    <!-- <ng-template pTemplate="footer">
+      <button pButton type="button" label="Close" icon="pi pi-times" (click)="hideModal()"></button>
+    </ng-template> -->
+  </p-dialog>
+
+  

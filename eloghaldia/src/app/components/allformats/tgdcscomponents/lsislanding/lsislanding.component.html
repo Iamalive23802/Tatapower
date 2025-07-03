@@ -1,0 +1,60 @@
+<p-toast></p-toast>
+
+<div class="p-4 overflow-x-auto">
+  <table class="min-w-full text-xs border-collapse border border-gray-300 rounded-md shadow">
+    <thead class="bg-gray-100 text-gray-800 font-semibold">
+      <tr>
+        <th class="border border-gray-300 p-2 text-center">Sl. No.</th>
+        <th class="border border-gray-300 p-2">Log sheet for Islanding scheme</th>
+        <th class="border border-gray-300 p-2 text-center">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let item of islandingArr; let i = index"
+        [ngClass]="{ 'bg-white': i % 2 === 0, 'bg-gray-50': i % 2 !== 0 }"
+        class="hover:bg-gray-100 transition"
+      >
+        <ng-container *ngIf="item.isHeading; else dataRow">
+          <td colspan="3" class="border border-gray-300 bg-blue-100 text-sm font-semibold text-center">
+            {{ item.parameter }}
+          </td>
+        </ng-container>
+
+        <ng-template #dataRow>
+          <td class="border border-gray-300 p-2 text-center font-medium">{{ i + 1 }}</td>
+          <td class="border border-gray-300 p-2 truncate">{{ item.parameter }}</td>
+          <td class="border border-gray-300 p-2">
+            <ng-container *ngIf="!item.isNumeric; else numericInput">
+              <p-dropdown
+                [options]="statusOptions"
+                [(ngModel)]="item.status"
+                placeholder="Select"
+                class="w-full text-xs"
+                [showClear]="true"
+              ></p-dropdown>
+            </ng-container>
+            <ng-template #numericInput>
+              <input
+                type="number"
+                [(ngModel)]="item.status"
+                class="w-full text-xs p-1 border border-gray-300 rounded"
+                placeholder="Enter value"
+              />
+            </ng-template>
+          </td>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="mt-4 text-center">
+  <button
+    pButton
+    type="button"
+    label="Save"
+    class="p-button-success"
+    (click)="saveData()"
+  ></button>
+</div>

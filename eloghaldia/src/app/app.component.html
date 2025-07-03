@@ -1,0 +1,52 @@
+
+<div *ngIf="httpService.isLoading" class="loader-backdrop">
+  <div class="loader"></div>
+</div>
+
+<div class="contentcontainer">
+  <div class="sidebar"  >
+      <!-- Sidebar contents -->
+      <app-sidebar ></app-sidebar>
+  </div><!--
+--><div style="padding-left: 5%;" >
+      <!-- Main contents -->
+      <!-- <div class="row">
+        <div class="col-md-1"></div>
+          <div class="col-md-11" >
+              <app-header ></app-header>
+          </div>
+      </div>
+      <div class="row">
+        <div class="row"><div class="col-md-1"></div>
+            <div class="col-md-11" >
+              <router-outlet> </router-outlet>
+          </div>
+      </div> -->
+
+      <!-- <div class="row"> -->
+          <div  style="padding-bottom: 10px;">
+            <div class="twinkling-header surface-card p-2 shadow-2 border-round">
+              <app-header ></app-header>
+            </div>
+          </div>
+      <!-- </div> -->
+      <!-- <div class="row">
+        <!- - <div class="row"><div class="col-md-1"></div> - ->
+            <div class="col-md-12" > -->
+              
+              <div class="surface-card p-2 shadow-2 border-round">
+               
+                <!-- <div class="text-3xl font-medium text-900 mb-3">Card Title</div> -->
+                <!-- <div class="font-medium text-500 mb-3">
+                  
+                </div> -->
+                <!-- <div class="border-2 border-dashed surface-border"> -->
+                  <router-outlet> </router-outlet>
+                <!-- </div> -->
+            </div>
+              
+              
+          <!-- </div>
+      </div> -->
+  </div>
+</div>

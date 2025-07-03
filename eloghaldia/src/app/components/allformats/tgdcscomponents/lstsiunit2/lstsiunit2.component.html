@@ -1,0 +1,38 @@
+<p-toast></p-toast>
+
+<div class="p-4 overflow-x-auto">
+  <table class="min-w-full text-xs border-collapse border border-gray-300 rounded-md shadow">
+    <thead class="bg-gray-100 text-gray-800 font-semibold">
+      <tr>
+        <th class="border border-gray-300 p-2 text-center">Sl. No.</th>
+        <th class="border border-gray-300 p-2">Parameter</th>
+        <th class="border border-gray-300 p-2 text-center">Unit</th>
+        <th class="border border-gray-300 p-2 text-center">Reading 1</th>
+        <th class="border border-gray-300 p-2 text-center">Reading 2</th>
+        <th class="border border-gray-300 p-2 text-center">Reading 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let param of lstsiunit2Arr; let i = index"
+          [ngClass]="{ 'bg-white': i % 2 === 0, 'bg-gray-50': i % 2 !== 0 }"
+          class="hover:bg-gray-100 transition">
+        <td class="border border-gray-300 p-2 text-center font-medium">{{ i + 1 }}</td>
+        <td class="border border-gray-300 p-2 truncate">{{ param.parameter }}</td>
+        <td class="border border-gray-300 p-2 text-center">{{ param.unit }}</td>
+        <td class="border border-gray-300 p-1">
+          <input pInputText [(ngModel)]="tsiunit2Obj[param.reading1]" class="w-full text-xs p-1 border rounded" />
+        </td>
+        <td class="border border-gray-300 p-1">
+          <input pInputText [(ngModel)]="tsiunit2Obj[param.reading2]" class="w-full text-xs p-1 border rounded" />
+        </td>
+        <td class="border border-gray-300 p-1">
+          <input pInputText [(ngModel)]="tsiunit2Obj[param.reading3]" class="w-full text-xs p-1 border rounded" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="mt-4 text-center">
+  <button pButton type="button" label="Save" class="p-button-success" (click)="insertfunc()"></button>
+</div>

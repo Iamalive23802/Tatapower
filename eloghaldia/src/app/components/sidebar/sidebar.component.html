@@ -1,0 +1,86 @@
+<div class="sidebar container-fluid ">
+    <div class="tplogo" style=" width: 75%;
+    margin-top: 30%;
+    margin-left: 15%;">
+      <img src="assets/TATA_logo.svg" alt="" style="width: -webkit-fill-available;"/>
+    </div>
+    <div class="row h-100">
+      <ul class="nav-links" *ngIf="rolemenuObj!=={}">
+  
+        <br><br><br><br>
+        <li>
+          <a class="nav-link" style="color: white; margin-left: -29%;"  routerLink="/">
+            <!-- routerLink="/elogcards" -->
+            <i>
+              <img class="icons"
+                style="margin-left: 43%;" src="assets/icon_home.svg">
+              </i>Home</a>
+        </li>
+        <li  *ngFor="let menu of rolemenuObj,let i=index">
+          <a class="nav-link" style="color: white; margin-left: -29%;" routerLink="{{menu.routerlink}}">
+            <i>
+              <img class="icons"
+                style="margin-left: 43%;" src="{{menu.icon}}">
+              </i>{{menu.menuname}}</a>
+        </li>
+      </ul>
+
+      <!-- <ul class="nav-links">
+  
+        <br><br><br><br>
+        
+
+        <li>
+          <a class="nav-link" style="color: white; margin-left: -29%;" routerLink="/landing">
+            <i>
+              <img class="icons"
+                style="margin-left: 43%;" src="assets/icon_home.svg">
+              </i>Home</a>
+        </li>
+        <li>
+          <a class="nav-link" style="color: white; margin-left: -29%;" routerLink="/manning">
+            <i>
+              <img class="icons"
+                style="margin-left: 43%;" src="assets/icon_report.svg">
+              </i>Manning</a>
+        </li>
+  
+        <li class="nav-item dropdown">
+  
+          <a id="navbardrop" data-toggle="dropdown" style="color: white; margin-left: -29%;"> <i> <img class="icons"
+                style="margin-left: 43%;" src="assets/icon_masters.svg">
+              <span class="link_name"></span></i>Admin</a>
+          <ul class="sub-menu" style="width: max-content;">
+            <div class="row" style="margin-right: 2.5%; width: 180px;">
+            <div class="col-lg-5">
+                <a class="dropdown-item" style="color: white;padding-left: 10px;" routerLink="/managelocations">Locations</a>
+                <a class="dropdown-item" style="color: white;padding-left: 10px;" routerLink="/manageunits">Units</a>
+                <a class="dropdown-item" style="color: white;padding-left: 10px;" routerLink="/manageroles">Roles</a>
+                <a class="dropdown-item" style="color: white;padding-left: 10px;" routerLink="/managecards">Cards</a>
+                <a class="dropdown-item" style="color: white;padding-left: 10px;" routerLink="/managecardmappings">Card mappings</a>
+                <a class="dropdown-item" style="color: white;padding-left: 10px;" routerLink="/manageempmappings">Employee mappings</a>
+            </div>
+            </div>
+          </ul>
+  
+        </li>
+  
+        <li>
+          <a id="navbardrop" data-toggle="dropdown" style="color: white; margin-left: -29%;"> <i> <img class="icons"
+                style="margin-left: 43%;" src="assets/icon_report.svg">
+              <span class="link_name"></span></i>Reports
+          </a>
+          <ul class="sub-menu" style="width: max-content;">
+            <div class="row" style="margin-right: 2.5%; width: 180px;">
+              <div class="col-lg-5">
+                <a class="dropdown-item" style="color: white;padding-left: 10px;" routerLink="dept">Yearly report</a>
+                <a class="dropdown-item" style="color: white;padding-left: 10px;" routerLink="monthly">Monthly Report</a>
+                <!- - <a class="dropdown-item" style="color: white" routerLink="cemanager">CE Manager Dashboard</a>
+                <a class="dropdown-item" style="color: white" routerLink="projecttrack">Project Tracking Report</a> - ->
+              </div>
+            </div>
+          </ul> 
+        </li>
+      </ul>-->
+    </div>
+  </div>

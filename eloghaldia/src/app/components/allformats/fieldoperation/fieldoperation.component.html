@@ -1,0 +1,103 @@
+
+
+<p-toast></p-toast>
+
+<p-panel header="Boiler Row 1&2  Field activities"  [toggleable]="true" [collapsed]="false" [iconPos]="'start'">
+    <angular-editor
+        #editor
+        [(ngModel)]="editortextbr1n2"
+        [config]="editorConfig"
+      ></angular-editor>
+      <div class="mt-4 text-center">
+        <button
+          pButton
+          type="button"
+          label="Save"
+          class="p-button-success"
+          (click)="addeditortxtfunc('boilerrow1n2activities','editortextbr1n2')"
+        ></button>
+      </div>  
+  </p-panel>
+
+  <p-panel header="Boiler Row 3&4 Field activities"  [toggleable]="true" [collapsed]="false" [iconPos]="'start'">
+      <angular-editor
+          #editor
+          [(ngModel)]="editortextbr3n4"
+          [config]="editorConfig"
+        ></angular-editor>
+        <div class="mt-4 text-center">
+          <button
+            pButton
+            type="button"
+            label="Save"
+            class="p-button-success"
+            (click)="addeditortxtfunc('boilerrow3n4activities','editortextbr3n4')"
+          ></button>
+        </div>  
+    </p-panel>
+
+    <p-panel header="TG area field and electrical operation activities"  [toggleable]="true" [collapsed]="false" [iconPos]="'start'">
+        <angular-editor
+            #editor
+            [(ngModel)]="editortext"
+            [config]="editorConfig"
+          ></angular-editor>
+          <div class="mt-4 text-center">
+            <button
+              pButton
+              type="button"
+              label="Save"
+              class="p-button-success"
+              (click)="addeditortxtfunc('tgareafneopractivities','editortext')"
+            ></button>
+          </div>  
+      </p-panel>
+      
+  
+     <p-panel header="Log sheet(F) Boiler Row 1 & 2" [toggleable]="true" [collapsed]="true" [iconPos]="'start'">
+  <app-logsheet-boiler-row1-2></app-logsheet-boiler-row1-2>
+</p-panel>
+
+<p-panel header="Log sheet(F) pump house" [toggleable]="true" [collapsed]="true" [iconPos]="'start'">
+  <app-logsheet-pumphouse></app-logsheet-pumphouse>
+</p-panel>
+
+<p-panel header="Log sheet(F) Boiler Row 3 & 4" [toggleable]="true" [collapsed]="true" [iconPos]="'start'">
+  <app-logsheet-boiler-row3-4></app-logsheet-boiler-row3-4>
+</p-panel>
+
+<p-panel header="TSI log sheet(F) Unit-1" [toggleable]="true" [collapsed]="true" [iconPos]="'start'">
+  <app-tsi-unit1></app-tsi-unit1>
+</p-panel>
+
+<p-panel header="TSI log sheet(F) Unit-2" [toggleable]="true" [collapsed]="true" [iconPos]="'start'">
+  <app-tsi-unit2></app-tsi-unit2>
+</p-panel>
+
+<p-panel header="TSI log sheet(F) Unit-3" [toggleable]="true" [collapsed]="true" [iconPos]="'start'">
+  <app-tsi-unit3></app-tsi-unit3>
+</p-panel>
+
+<p-panel header="Log sheet(F) Compressor" [toggleable]="true" [collapsed]="true" [iconPos]="'start'">
+  <app-logsheet-compressor></app-logsheet-compressor>
+</p-panel>
+
+<p-panel header="Log sheet(F) Unit 1 TG zero meter" [toggleable]="true" [collapsed]="true" [iconPos]="'start'">
+  <app-logsheet-tg-zero-unit1></app-logsheet-tg-zero-unit1>
+</p-panel>
+
+<p-panel header="Log sheet(F) Unit 2 TG zero meter" [toggleable]="true" [collapsed]="true" [iconPos]="'start'">
+  <app-logsheet-tg-zero-unit2></app-logsheet-tg-zero-unit2>
+</p-panel>
+
+<p-panel header="Log sheet(F) Unit 3 TG zero meter" [toggleable]="true" [collapsed]="true" [iconPos]="'start'">
+  <app-logsheet-tg-zero-unit3></app-logsheet-tg-zero-unit3>
+</p-panel>
+
+<p-panel header="Log sheet(F) TG common area" [toggleable]="true" [collapsed]="true" [iconPos]="'start'">
+  <app-logsheet-tg-common></app-logsheet-tg-common>
+</p-panel>
+
+<p-panel header="Log Sheet(F) for Electrical Equipment" [toggleable]="true" [collapsed]="true" [iconPos]="'start'">
+  <app-logsheet-electrical-eq></app-logsheet-electrical-eq>
+</p-panel>

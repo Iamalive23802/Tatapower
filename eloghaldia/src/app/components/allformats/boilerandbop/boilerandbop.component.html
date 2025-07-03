@@ -1,0 +1,95 @@
+<p-toast></p-toast>
+
+<!-- Shift Info Preview -->
+<div class="mb-3 p-2 bg-blue-50 border border-blue-200 rounded text-sm text-blue-800">
+  <strong>Received Shift Info:</strong><br />
+  Shift Date: {{ shiftDate | date: 'dd/MM/yyyy' }}<br />
+  Shift Name: {{ shiftName }}
+</div>
+
+<!-- Boiler & BOP Shift Activities -->
+<p-panel header="Boiler & BOP Shift activities" [toggleable]="true" [collapsed]="false" [iconPos]="'start'">
+  <angular-editor
+    #editor
+    [(ngModel)]="editortext"
+    [config]="editorConfig">
+  </angular-editor>
+  <div class="mt-4 text-center">
+    <button
+      pButton
+      type="button"
+      label="Save"
+      class="p-button-success"
+      (click)="addeditortxtfunc()"
+    ></button>
+  </div>  
+</p-panel>
+
+<!-- Log Sheets -->
+
+<!-- Boiler Log Sheet -->
+<p-panel header="Log sheet Boilers"
+         [toggleable]="true"
+         [collapsed]="true"
+         [iconPos]="'start'"
+         (collapsedChange)="onCollapsedChange($event, 'boiler')">
+  <app-boiler-logsheet
+    *ngIf="panelLoaded['boiler']"
+    [shiftDate]="shiftDate"
+    [shiftName]="shiftName"
+  ></app-boiler-logsheet>
+</p-panel>
+
+<!-- Boiler Damper Status -->
+<p-panel header="Boiler Damper Status"
+         [toggleable]="true"
+         [collapsed]="true"
+         [iconPos]="'start'"
+         (collapsedChange)="onCollapsedChange($event, 'damper')">
+  <app-boiler-damper-status
+    *ngIf="panelLoaded['damper']"
+    [shiftDate]="shiftDate"
+    [shiftName]="shiftName"
+  ></app-boiler-damper-status>
+</p-panel>
+
+<!-- Boiler HPDP & Agitator Status -->
+<p-panel header="Boiler HPDP & Agitator Status"
+         [toggleable]="true"
+         [collapsed]="true"
+         [iconPos]="'start'"
+         (collapsedChange)="onCollapsedChange($event, 'hpdp')">
+         <app-boiler-hpdp-agitator
+  *ngIf="panelLoaded['hpdp']"
+  [shiftDate]="shiftDate"
+  [shiftName]="shiftName"
+></app-boiler-hpdp-agitator>
+
+ 
+</p-panel>
+
+<!-- Boiler ID Fan Status -->
+<p-panel header="Boiler ID Fan Status"
+         [toggleable]="true"
+         [collapsed]="true"
+         [iconPos]="'start'"
+         (collapsedChange)="onCollapsedChange($event, 'idfan')">
+  <app-boiler-idfan-status
+    *ngIf="panelLoaded['idfan']"
+    [shiftDate]="shiftDate"
+    [shiftName]="shiftName"
+  ></app-boiler-idfan-status>
+</p-panel>
+
+<!-- BOP Log Sheet -->
+<p-panel header="Log sheet BOPs"
+         [toggleable]="true"
+         [collapsed]="true"
+         [iconPos]="'start'"
+         (collapsedChange)="onCollapsedChange($event, 'bop')">
+    <app-bop-logsheet
+    *ngIf="panelLoaded['bop']"
+    [shiftDate]="shiftDate"
+    [shiftName]="shiftName"
+  ></app-bop-logsheet>
+</p-panel>

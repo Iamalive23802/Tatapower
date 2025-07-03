@@ -1,0 +1,9 @@
+<p>shiftactivities works!</p>
+
+<p-panel header="Shift activities"  [toggleable]="true" [collapsed]="false" [iconPos]="'start'">
+    <angular-editor
+        #editor
+        [(ngModel)]="editortext"
+        [config]="editorConfig"
+      ></angular-editor>
+  </p-panel>

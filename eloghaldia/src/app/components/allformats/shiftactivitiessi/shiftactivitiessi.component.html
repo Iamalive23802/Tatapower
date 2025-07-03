@@ -1,0 +1,18 @@
+<p-toast></p-toast>
+<p-panel header="Shift activities"  [toggleable]="true" [collapsed]="false" [iconPos]="'start'">
+    <angular-editor
+        #editor
+        [(ngModel)]="editortext"
+        [config]="editorConfig"
+      ></angular-editor>
+      <div class="mt-4 text-center">
+        <button
+          pButton
+          type="button"
+          label="Save"
+          class="p-button-success"
+          (click)="addshiftactivityfunc()"
+        ></button>
+      </div>  
+  </p-panel>
+

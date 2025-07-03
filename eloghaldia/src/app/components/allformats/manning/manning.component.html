@@ -1,0 +1,169 @@
+<p-toast></p-toast>
+
+<div class="surface-ground">
+  <div class="row">
+    <div class="col-2">
+      <div class="flex flex-column gap-2">
+        <label>Date</label>
+        <p-calendar
+          [(ngModel)]="shiftDate"
+          dateFormat="dd/mm/yy"
+          [showIcon]="true"
+          (ngModelChange)="checkShiftManning()"
+        ></p-calendar>
+      </div>
+    </div>
+
+    <div class="col-2">
+      <div class="flex flex-column gap-2">
+        <label>Shift</label>
+        <p-dropdown
+          [options]="shiftNames"
+          [(ngModel)]="shiftName"
+          [showClear]="true"
+          placeholder="Select"
+          (ngModelChange)="checkShiftManning()"
+        ></p-dropdown>
+      </div>
+    </div>
+
+    <div
+      class="col-2"
+      *ngIf="['roleincharge', 'shiftincharge', 'controlroomengineer'].includes(emprole)"
+    >
+      <div class="flex flex-column" style="margin-top: 2rem;">
+        <label> </label>
+        <button
+          (click)="submitManning()"
+          pButton
+          pRipple
+          [label]="editMode ? 'Edit' : 'Submit'"
+          type="button"
+          class="mr-3 p-button-raised"
+        ></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <p-panel header="Manning details" [toggleable]="true" [collapsed]="false">
+      <!-- <ng-template pTemplate="icons">
+        <button class="p-panel-header-icon p-link mr-2" >
+            
+          <i class="pi pi-check-square"></i>
+        </button>
+    </ng-template> -->
+      <div class="row">
+        <div class="col-3">
+          <label>Shift incharge</label>
+          <p-autoComplete
+            [(ngModel)]="selectedshiftincharge"
+            [dropdown]="true"
+            [suggestions]="filteredshiftincharge"
+            (completeMethod)="filtershiftincharge($event)"
+            field="empname"
+          ></p-autoComplete>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+          <label>CR Engineer 1</label>
+          <p-autoComplete
+            [(ngModel)]="selectedCREngg1"
+            [dropdown]="true"
+            [suggestions]="filteredCREngg1"
+            (completeMethod)="filterCREngg1($event)"
+            field="empname"
+          ></p-autoComplete>
+        </div>
+        <div class="col-3">
+          <label>CR Engineer 2</label>
+          <p-autoComplete
+            [(ngModel)]="selectedCREngg2"
+            [dropdown]="true"
+            [suggestions]="filteredCREngg2"
+            (completeMethod)="filterCREngg2($event)"
+            field="empname"
+          ></p-autoComplete>
+        </div>
+        <div class="col-3">
+          <label>CR Engineer 3</label>
+          <p-autoComplete
+            [(ngModel)]="selectedCREngg3"
+            [dropdown]="true"
+            [suggestions]="filteredCREngg3"
+            (completeMethod)="filterCREngg3($event)"
+            field="empname"
+          ></p-autoComplete>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+          <label>Field engineer 1</label>
+          <p-autoComplete
+            [(ngModel)]="selectedFE1"
+            [dropdown]="true"
+            [suggestions]="filteredFE1"
+            (completeMethod)="filterFE1($event)"
+            field="empname"
+          ></p-autoComplete>
+        </div>
+        <div class="col-3">
+          <label>Field engineer 2</label>
+          <p-autoComplete
+            [(ngModel)]="selectedFE2"
+            [dropdown]="true"
+            [suggestions]="filteredFE2"
+            (completeMethod)="filterFE2($event)"
+            field="empname"
+          ></p-autoComplete>
+        </div>
+        <div class="col-3">
+          <label>Field engineer 3</label>
+          <p-autoComplete
+            [(ngModel)]="selectedFE3"
+            [dropdown]="true"
+            [suggestions]="filteredFE3"
+            (completeMethod)="filterFE3($event)"
+            field="empname"
+          ></p-autoComplete>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+          <label>Field engineer 4</label>
+          <p-autoComplete
+            [(ngModel)]="selectedFE4"
+            [dropdown]="true"
+            [suggestions]="filteredFE4"
+            (completeMethod)="filterFE4($event)"
+            field="empname"
+          ></p-autoComplete>
+        </div>
+        <div class="col-3">
+          <label>Field engineer 5</label>
+          <p-autoComplete
+            [(ngModel)]="selectedFE5"
+            [dropdown]="true"
+            [suggestions]="filteredFE5"
+            (completeMethod)="filterFE5($event)"
+            field="empname"
+          ></p-autoComplete>
+        </div>
+        <div class="col-3">
+          <label>Field engineer 6</label>
+          <p-autoComplete
+            [(ngModel)]="selectedFE6"
+            [dropdown]="true"
+            [suggestions]="filteredFE6"
+            (completeMethod)="filterFE6($event)"
+            field="empname"
+          ></p-autoComplete>
+        </div>
+      </div>
+    </p-panel>
+  </div>
+</div>

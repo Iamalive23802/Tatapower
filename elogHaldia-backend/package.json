@@ -1,0 +1,40 @@
+{
+  "name": "elog-backend",
+  "version": "1.0.0",
+  "description": "Elog version 1 backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://snehakulkarni@dev.azure.com/snehakulkarni/elog-backend/_git/elog-backend"
+  },
+  "keywords": [
+    "elog"
+  ],
+  "author": "Sneha Kulkarni",
+  "license": "ISC",
+  "dependencies": {
+    "@types/crypto-js": "^4.1.2",
+    "@types/multer": "^1.4.7",
+    "axios": "^1.8.4",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-limiter": "^1.6.1",
+    "handlebars": "^4.7.8",
+    "helmet": "^7.0.0",
+    "init": "^0.1.2",
+    "moment": "^2.29.4",
+    "multer": "^1.4.5-lts.1",
+    "node-cron": "^3.0.2",
+    "nodemailer": "^6.9.4",
+    "pg": "^8.10.0",
+    "primeng": "^16.9.1",
+    "rate-limiter-flexible": "^5.0.0",
+    "redis": "^4.6.13",
+    "underscore": "^1.13.6"
+  }
+}

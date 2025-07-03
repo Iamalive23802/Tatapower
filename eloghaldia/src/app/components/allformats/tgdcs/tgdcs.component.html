@@ -1,0 +1,125 @@
+<p-toast></p-toast>
+
+<!-- Shift Info Preview -->
+<div class="mb-3 p-2 bg-blue-50 border border-blue-200 rounded text-sm text-blue-800">
+  <strong>Received Shift Info:</strong><br />
+  Shift Date: {{ shiftDate | date: 'dd/MM/yyyy' }}<br />
+  Shift Name: {{ shiftName }}
+</div>
+
+<!-- TG & Auxiliary Shift Activities -->
+<p-panel header="TG & Auxiliary Shift activities" [toggleable]="true" [collapsed]="false" [iconPos]="'start'">
+  <angular-editor
+    #editor
+    [(ngModel)]="editortext"
+    [config]="editorConfig"
+  ></angular-editor>
+  <div class="mt-4 text-center">
+    <button
+      pButton
+      type="button"
+      label="Save"
+      class="p-button-success"
+      (click)="addeditortxtfunc()"
+    ></button>
+  </div>  
+</p-panel>
+
+<!-- Log Sheets -->
+
+<!-- TG Unit 1 -->
+<p-panel header="Log sheet TG Unit 1"
+         [toggleable]="true"
+         [collapsed]="true"
+         [iconPos]="'start'"
+         (collapsedChange)="onCollapsedChange($event, 'unit1')">
+  <app-lstgunit1
+    *ngIf="panelLoaded['unit1']"
+    [shiftDate]="shiftDate"
+    [shiftName]="shiftName"
+  ></app-lstgunit1>
+</p-panel>
+
+<!-- TSI Unit 1 -->
+<p-panel header="Log sheet TSI Unit 1"
+         [toggleable]="true"
+         [collapsed]="true"
+         [iconPos]="'start'"
+         (collapsedChange)="onCollapsedChange($event, 'tsiunit1')">
+  <app-lstsiunit1
+    *ngIf="panelLoaded['tsiunit1']"
+    [shiftDate]="shiftDate"
+    [shiftName]="shiftName"
+  ></app-lstsiunit1>
+</p-panel>
+
+<!-- TG Unit 2 -->
+<p-panel header="Log sheet TG Unit 2"
+         [toggleable]="true"
+         [collapsed]="true"
+         [iconPos]="'start'"
+         (collapsedChange)="onCollapsedChange($event, 'unit2')">
+  <app-lstgunit2
+  ></app-lstgunit2>
+</p-panel>
+
+<!-- TSI Unit 2 -->
+<p-panel header="Log sheet TSI Unit 2"
+         [toggleable]="true"
+         [collapsed]="true"
+         [iconPos]="'start'"
+         (collapsedChange)="onCollapsedChange($event, 'tsiunit2')">
+  <app-lstsiunit2
+    *ngIf="panelLoaded['tsiunit2']"
+    [shiftDate]="shiftDate"
+    [shiftName]="shiftName"
+  ></app-lstsiunit2>
+</p-panel>
+
+<!-- TG Unit 3 -->
+<p-panel header="Log sheet TG Unit 3"
+         [toggleable]="true"
+         [collapsed]="true"
+         [iconPos]="'start'"
+         (collapsedChange)="onCollapsedChange($event, 'unit3')">
+  <app-lstgunit3
+    *ngIf="panelLoaded['unit3']"
+    [shiftDate]="shiftDate"
+    [shiftName]="shiftName"
+  ></app-lstgunit3>
+</p-panel>
+
+<!-- TSI Unit 3 -->
+<p-panel header="Log sheet TSI Unit 3"
+         [toggleable]="true"
+         [collapsed]="true"
+         [iconPos]="'start'"
+         (collapsedChange)="onCollapsedChange($event, 'tsiunit3')">
+  <app-lstsiunit3
+    *ngIf="panelLoaded['tsiunit3']"
+    [shiftDate]="shiftDate"
+    [shiftName]="shiftName"
+  ></app-lstsiunit3>
+</p-panel>
+
+<!-- Auxiliary Equipment -->
+<p-panel header="Log sheet Auxiliary Equipment"
+         [toggleable]="true"
+         [collapsed]="true"
+         [iconPos]="'start'">
+  <app-lsauxeqpmnt
+    [shiftDate]="shiftDate"
+    [shiftName]="shiftName"
+  ></app-lsauxeqpmnt>
+</p-panel>
+
+<!-- Islanding -->
+<p-panel header="Islanding log sheet"
+         [toggleable]="true"
+         [collapsed]="true"
+         [iconPos]="'start'">
+  <app-lsislanding
+    [shiftDate]="shiftDate"
+    [shiftName]="shiftName"
+  ></app-lsislanding>
+</p-panel>

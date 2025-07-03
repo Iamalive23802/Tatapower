@@ -1,0 +1,37 @@
+<div class="surface-card p-4 shadow-2 border-round">
+    <div class="text-3xl font-medium text-900 mb-3">Basic selections</div>
+    <div class="font-medium text-500 mb-3">Please select from the below mentioned options to access the system.</div>
+    <div class="border-2 surface-border">
+     
+<div class="p-4 grid">  
+    <div class="col-1 "></div>
+    <div class="col-3 md:col-3 mb-3 px-5 text-500">Unit</div>
+    <div class="col-7 md:col-7 mb-4 px-5">
+        
+<!-- <div class=" flex justify-content-center"> -->
+<p-dropdown [style]="{'width':'70%'}" [options]="units" [(ngModel)]="selectedUnit" optionLabel="name" [showClear]="true" placeholder="Select a Unit"></p-dropdown>
+<!-- </div> -->
+<br>
+</div>
+<div class="col-1 "></div>
+
+<div class="col-1 "></div>
+<div class="col-3 md:col-3 mb-3 px-5 text-500">Role</div>
+<div class="col-7 md:col-7 mb-4 px-5">
+<p-dropdown [style]="{'width':'70%'}" [options]="roles" [(ngModel)]="selectedRole" optionLabel="name" [showClear]="true" placeholder="Select role"></p-dropdown>
+<br>
+</div>
+<div class="col-1 "></div>
+<div class="col-1 "></div>
+<div class="col-3 md:col-3 mb-3 px-5 text-500">Shift</div>
+<div class="col-7 md:col-7 mb-4 px-5">
+<p-dropdown [style]="{'width':'70%'}" [options]="shifts" [(ngModel)]="selectedShift" optionLabel="name" [showClear]="true" placeholder="Select shift"></p-dropdown>
+<br>
+</div>
+<div class="col-1 "></div>
+</div>
+<div class="p-4  flex justify-content-center">
+    <p-button  icon="pi pi-check" (click)="submitselection()" label="Ok"   styleClass="p-button-text border-round"></p-button>
+</div>
+</div>
+</div>

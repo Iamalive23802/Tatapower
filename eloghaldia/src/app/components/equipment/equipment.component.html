@@ -1,0 +1,120 @@
+<div class="row">
+    <div class="row">
+      <div class="col-8">
+        <span class="text-2xl font-medium text-900">Daily shift records</span>
+      </div>
+      <div class="row">
+        <div class="col-4" *ngIf="CRstatus === 'Pending'">
+          <p-chip styleClass="pl-0 pr-3 bgyellow">
+            <span class="bg-primary border-circle w-2rem h-2rem flex align-items-center justify-content-center">
+              <i class="pi pi-spin pi-cog" style="font-size: 1rem"></i>
+            </span>
+            <span class="ml-2 font-medium">{{ CRstatus }}</span>
+          </p-chip>
+        </div>
+        <div class="col-4" *ngIf="CRstatus === 'Shift incharge approval pending'">
+          <p-chip styleClass="pl-0 pr-3 bgorange">
+            <span class="bg-primary border-circle w-2rem h-2rem flex align-items-center justify-content-center">
+              <i class="pi pi-spin pi-cog" style="font-size: 1rem"></i>
+            </span>
+            <span class="ml-2 font-medium">{{ CRstatus }}</span>
+          </p-chip>
+        </div>
+        <div class="col-4" *ngIf="CRstatus === 'Approved by shift incharge' || CRstatus === 'Approved by role incharge'">
+          <p-chip styleClass="pl-0 pr-3 bggreen">
+            <span class="bg-primary border-circle w-2rem h-2rem flex align-items-center justify-content-center">
+              <i class="pi pi-thumbs-up-fill" style="font-size: 1rem"></i>
+            </span>
+            <span class="ml-2 font-medium">{{ CRstatus }}</span>
+          </p-chip>
+        </div>
+        <div class="col-4" *ngIf="CRstatus === 'Rejected by shift incharge' || CRstatus === 'Rejected by role incharge'">
+          <p-chip styleClass="pl-0 pr-3 bgred">
+            <span class="bg-primary border-circle w-2rem h-2rem flex align-items-center justify-content-center">
+              <i class="pi pi-thumbs-down-fill" style="font-size: 1rem"></i>
+            </span>
+            <span class="ml-2 font-medium">{{ CRstatus }}</span>
+          </p-chip>
+        </div>
+      </div>
+    </div>
+  
+<div class="row p-3 flex align-items-end gap-4">
+    <div class="col-auto flex flex-column">
+      <label class="mb-1">Shift Date:</label>
+      <p-calendar
+  [(ngModel)]="selectedShiftDate"
+  dateFormat="dd/mm/yy"
+  [showIcon]="true"
+  (ngModelChange)="onShiftDateChange()"
+></p-calendar>
+</div>
+  
+    <div class="col-auto flex flex-column">
+      <label class="mb-1">Shift Name:</label>
+      <p-dropdown
+  [options]="shiftNames"
+  [(ngModel)]="selectedShiftName"
+  placeholder="Select shift"
+  (ngModelChange)="onShiftNameChange()"
+></p-dropdown>
+    </div>
+  
+    <div class="col-auto" style="margin-top: 1.7rem;">
+      <p-button
+        [label]="editMode ? 'Edit' : 'Submit'"
+
+        (click)="submitShiftInfo()"
+      ></p-button>
+    </div>
+  </div>  
+  
+    <div class="row">
+      <p-tabView>
+        <p-tabPanel header="Manning">
+          
+          <app-manning
+            [shiftDate]="selectedShiftDate"
+            [shiftName]="selectedShiftName"
+          ></app-manning>
+        </p-tabPanel>
+  
+        <p-tabPanel
+          header="Shift incharge activities"
+          *ngIf="['roleincharge', 'shiftincharge'].includes(emprole)"
+        >
+          <app-shiftactivitiessi></app-shiftactivitiessi>
+        </p-tabPanel>
+  
+        <!-- <p-tabPanel header="CR Shift activities">
+          <app-shiftactivities
+            [shiftDate]="selectedShiftDate"
+            [shiftName]="selectedShiftName"
+          ></app-shiftactivities>
+        </p-tabPanel> -->
+  
+        <p-tabPanel header="TG DCS">
+          <app-tgdcs
+  [shiftDate]="selectedShiftDate"
+  [shiftName]="selectedShiftName"
+></app-tgdcs>
+
+        </p-tabPanel>
+  
+        <p-tabPanel header="Boiler and BOP DCS">
+          <app-boilerandbop
+            [shiftDate]="selectedShiftDate"
+            [shiftName]="selectedShiftName"
+          ></app-boilerandbop>
+        </p-tabPanel>
+  
+        <p-tabPanel header="Field operation">
+          <app-fieldoperation
+            [shiftDate]="selectedShiftDate"
+            [shiftName]="selectedShiftName"
+          ></app-fieldoperation>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+  </div>
+  

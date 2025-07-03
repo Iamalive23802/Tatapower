@@ -1,0 +1,153 @@
+<p-toast></p-toast>
+
+<div class="mb-3 p-2 bg-blue-50 border border-blue-200 rounded text-sm text-blue-800">
+  <strong>Received Shift Info:</strong><br />
+  Shift Date: {{ shiftDate | date: 'dd/MM/yyyy' }}<br />
+  Shift Name: {{ shiftName }}
+</div>
+
+<!-- Unit 1 -->
+<p-panel header="Unit 1 TG Auxiliary Equipment Status"
+         [toggleable]="true"
+         [collapsed]="!panelStates.unit1"
+         (onToggle)="togglePanel('unit1')"
+         [iconPos]="'start'">
+  <div class="overflow-x-auto">
+    <table class="min-w-full text-sm border-collapse border border-gray-300">
+      <thead class="bg-gray-200 font-semibold text-center">
+        <tr>
+          <th class="border border-gray-300 p-2">Equipment</th>
+          <th class="border border-gray-300 p-2">Start</th>
+          <th class="border border-gray-300 p-2">End</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let eq of auxUnitData.unit1">
+          <td class="border border-gray-300 p-2 text-left">{{ eq }}</td>
+          <td class="border border-gray-300 p-2">
+            <p-dropdown 
+              [options]="statusOptions" 
+              [(ngModel)]="equipmentStatus.unit1[eq].start"
+              optionLabel="label"
+              optionValue="value"
+              placeholder="Select"
+              class="w-full p-dropdown-sm"
+              appendTo="body">
+            </p-dropdown>
+          </td>
+          <td class="border border-gray-300 p-2">
+            <p-dropdown 
+              [options]="statusOptions" 
+              [(ngModel)]="equipmentStatus.unit1[eq].end"
+              optionLabel="label"
+              optionValue="value"
+              placeholder="Select"
+              class="w-full p-dropdown-sm"
+              appendTo="body">
+            </p-dropdown>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</p-panel>
+
+<!-- Unit 2 -->
+<p-panel header="Unit 2 TG Auxiliary Equipment Status"
+         [toggleable]="true"
+         [collapsed]="!panelStates.unit2"
+         (onToggle)="togglePanel('unit2')"
+         [iconPos]="'start'">
+  <div class="overflow-x-auto">
+    <table class="min-w-full text-sm border-collapse border border-gray-300">
+      <thead class="bg-gray-200 font-semibold text-center">
+        <tr>
+          <th class="border border-gray-300 p-2">Equipment</th>
+          <th class="border border-gray-300 p-2">Start</th>
+          <th class="border border-gray-300 p-2">End</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let eq of auxUnitData.unit2">
+          <td class="border border-gray-300 p-2 text-left">{{ eq }}</td>
+          <td class="border border-gray-300 p-2">
+            <p-dropdown 
+              [options]="statusOptions" 
+              [(ngModel)]="equipmentStatus.unit2[eq].start"
+              optionLabel="label"
+              optionValue="value"
+              placeholder="Select"
+              class="w-full p-dropdown-sm"
+              appendTo="body">
+            </p-dropdown>
+          </td>
+          <td class="border border-gray-300 p-2">
+            <p-dropdown 
+              [options]="statusOptions" 
+              [(ngModel)]="equipmentStatus.unit2[eq].end"
+              optionLabel="label"
+              optionValue="value"
+              placeholder="Select"
+              class="w-full p-dropdown-sm"
+              appendTo="body">
+            </p-dropdown>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</p-panel>
+
+<!-- Unit 3 -->
+<p-panel header="Unit 3 TG Auxiliary Equipment Status"
+         [toggleable]="true"
+         [collapsed]="!panelStates.unit3"
+         (onToggle)="togglePanel('unit3')"
+         [iconPos]="'start'">
+  <div class="overflow-x-auto">
+    <table class="min-w-full text-sm border-collapse border border-gray-300">
+      <thead class="bg-gray-200 font-semibold text-center">
+        <tr>
+          <th class="border border-gray-300 p-2">Equipment</th>
+          <th class="border border-gray-300 p-2">Start</th>
+          <th class="border border-gray-300 p-2">End</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let eq of auxUnitData.unit3; let i = index; let last = last">
+          <td class="border border-gray-300 p-2 text-left">{{ eq }}</td>
+          <td class="border border-gray-300 p-2">
+            <p-dropdown 
+              [options]="statusOptions" 
+              [(ngModel)]="equipmentStatus.unit3[eq].start"
+              optionLabel="label"
+              optionValue="value"
+              placeholder="Select"
+              class="w-full p-dropdown-sm"
+              appendTo="body"
+              [panelStyle]="last ? {'top': 'auto', 'bottom': '100%', 'margin-bottom': '0.25rem', 'z-index': '9999', 'transform-origin': 'bottom'} : null">
+            </p-dropdown>
+          </td>
+          <td class="border border-gray-300 p-2">
+            <p-dropdown 
+              [options]="statusOptions" 
+              [(ngModel)]="equipmentStatus.unit3[eq].end"
+              optionLabel="label"
+              optionValue="value"
+              placeholder="Select"
+              class="w-full p-dropdown-sm"
+              appendTo="body"
+              [panelStyle]="last ? {'top': 'auto', 'bottom': '100%', 'margin-bottom': '0.25rem', 'z-index': '9999', 'transform-origin': 'bottom'} : null">
+            </p-dropdown>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</p-panel>
+
+<div class="mt-4 text-end">
+  <button pButton type="button" label="Save Status" icon="pi pi-save" class="p-button-success px-5 py-2"
+          (click)="insertfunc()">
+  </button>
+</div>

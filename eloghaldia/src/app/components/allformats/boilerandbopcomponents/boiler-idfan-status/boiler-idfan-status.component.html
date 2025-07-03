@@ -1,0 +1,29 @@
+<p-toast></p-toast>
+
+<!-- Shift Info Display -->
+<div class="mb-3 p-2 bg-blue-50 border border-blue-200 rounded text-sm text-blue-800">
+  <strong>Shift Info:</strong><br />
+  Shift Date: {{ shiftDate | date: 'dd/MM/yyyy' }}<br />
+  Shift Name: {{ shiftName }}
+</div>
+
+<!-- Panel Wrapper -->
+<p-panel header="Boiler ID FAN Status" [toggleable]="true" [collapsed]="false">
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+    <div *ngFor="let item of idfanStatusArr">
+      <label class="block text-sm font-medium text-gray-700 mb-1">{{ item.label }}</label>
+      <p-dropdown
+        [options]="statusOptions"
+        [(ngModel)]="item.status"
+        placeholder="Select"
+        optionLabel="label"
+        [style]="{ width: '100%' }"
+      ></p-dropdown>
+    </div>
+  </div>
+
+  <!-- Save Button -->
+  <div class="mt-4">
+    <button pButton type="button" label="Save" class="p-button-sm p-button-success" (click)="saveData()"></button>
+  </div>
+</p-panel>
