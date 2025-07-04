@@ -20,7 +20,7 @@ export class BopLogsheetComponent implements OnInit, OnChanges {
   };
 
   bfpUnit1and2Arr: any[] = [];
-  bfpUnit3Arr: any[] = [];
+  valvePosArr: any[] = [];
   acwArr: any[] = [];
   cwpArr: any[] = [];
   ctfansArr: any[] = [];
@@ -103,26 +103,16 @@ export class BopLogsheetComponent implements OnInit, OnChanges {
 
   initializeArrays(): void {
     this.bfpUnit1and2Arr = [
-      { parameter: 'BFP CURRENT', unit: 'AMPS', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
-      { parameter: 'BFP SUCTION PR.', unit: 'KG/CM2', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
-      { parameter: 'BFP SUCTION TEMP.', unit: 'DegC', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
-      { parameter: 'BFP DISCHARGE PR.', unit: 'KG/CM2', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
-      { parameter: 'BFP DISCHARGE TEMP.', unit: 'DegC', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
-      { parameter: 'BFP MOTOR BRG. TEMP. (DE)', unit: 'DegC', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
-      { parameter: 'BFP MOTOR BRG. TEMP. (NDE)', unit: 'DegC', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
-      { parameter: 'BFP MOTOR MAX WINDING TEMP.', unit: 'DegC', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' }
+      { parameter: 'BFP CURRENT', unit: 'AMPS', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '', bfp3a: '', bfp3b: '', bfp3c: '' },
+      { parameter: 'BFP SUCTION PR.', unit: 'KG/CM2', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '', bfp3a: '', bfp3b: '', bfp3c: '' },
+      { parameter: 'BFP SUCTION TEMP.', unit: 'DegC', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '', bfp3a: '', bfp3b: '', bfp3c: '' },
+      { parameter: 'BFP DISCHARGE PR.', unit: 'KG/CM2', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '', bfp3a: '', bfp3b: '', bfp3c: '' },
+      { parameter: 'BFP DISCHARGE TEMP.', unit: 'DegC', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '', bfp3a: '', bfp3b: '', bfp3c: '' },
+      { parameter: 'BFP MOTOR BRG. TEMP. (DE)', unit: 'DegC', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '', bfp3a: '', bfp3b: '', bfp3c: '' },
+      { parameter: 'BFP MOTOR BRG. TEMP. (NDE)', unit: 'DegC', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '', bfp3a: '', bfp3b: '', bfp3c: '' },
+      { parameter: 'BFP MOTOR MAX WINDING TEMP.', unit: 'DegC', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '', bfp3a: '', bfp3b: '', bfp3c: '' }
     ];
 
-    this.bfpUnit3Arr = [
-      { parameter: 'BFP CURRENT', unit: 'AMPS', bfp3a: '', bfp3b: '', bfp3c: '' },
-      { parameter: 'BFP SUCTION PR.', unit: 'KG/CM2', bfp3a: '', bfp3b: '', bfp3c: '' },
-      { parameter: 'BFP SUCTION TEMP.', unit: 'DegC', bfp3a: '', bfp3b: '', bfp3c: '' },
-      { parameter: 'BFP DISCHARGE PR.', unit: 'KG/CM2', bfp3a: '', bfp3b: '', bfp3c: '' },
-      { parameter: 'BFP DISCHARGE TEMP.', unit: 'DegC', bfp3a: '', bfp3b: '', bfp3c: '' },
-      { parameter: 'BFP MOTOR BRG. TEMP. (DE)', unit: 'DegC', bfp3a: '', bfp3b: '', bfp3c: '' },
-      { parameter: 'BFP MOTOR BRG. TEMP. (NDE)', unit: 'DegC', bfp3a: '', bfp3b: '', bfp3c: '' },
-      { parameter: 'BFP MOTOR MAX WINDING TEMP.', unit: 'DegC', bfp3a: '', bfp3b: '', bfp3c: '' }
-    ];
 
     this.acwArr = [
       { parameter: 'ACW CURRENT', unit: 'AMPS', acw1a: '', acw1b: '', acw2a: '', acw2b: '', acw3a: '', acw3b: '' },
@@ -149,6 +139,12 @@ export class BopLogsheetComponent implements OnInit, OnChanges {
       { name: 'CT FAN-6', status: '', current: '', unit: 'UNIT-2', lhs: '', rhs: '' },
       { name: 'CT FAN-7', status: '', current: '', unit: 'UNIT-3', lhs: '', rhs: '' },
       { name: 'CT FAN-8', status: '', current: '', unit: 'UNIT-3', lhs: '', rhs: '' }
+    ];
+
+    this.valvePosArr = [
+      { unit: 'UNIT-1', lhs: '', rhs: '' },
+      { unit: 'UNIT-2', lhs: '', rhs: '' },
+      { unit: 'UNIT-3', lhs: '', rhs: '' }
     ];
 
     this.conductivityArr = [
