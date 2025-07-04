@@ -26,6 +26,15 @@ export class BopLogsheetComponent implements OnInit, OnChanges {
   ctfansArr: any[] = [];
   conductivityArr: any[] = [];
   roomTempsArr: any[] = [];
+  serviceWaterPumpLevels: any[] = [];
+  serviceWaterPumpStatus: any = { swp1: '', swp2: '' };
+
+  pumpStatusOptions = [
+    { label: 'Running', value: 'Running' },
+    { label: 'Stand By', value: 'Stand By' },
+    { label: 'Auto', value: 'Auto' },
+    { label: 'Not Available', value: 'Not Available' }
+  ];
 
   statusOptions = [
     { label: 'AVAILABLE & MANUAL', value: 'AVAILABLE & MANUAL' },
@@ -165,6 +174,21 @@ export class BopLogsheetComponent implements OnInit, OnChanges {
       { name: 'RESERVOIR 1 LEVEL', shiftstart: '', shiftend: '' },
       { name: 'RESERVOIR 2 LEVEL', shiftstart: '', shiftend: '' },
       { name: 'SUMP/PIT LEVEL', shiftstart: '', shiftend: '' }
+    ];
+
+    this.serviceWaterPumpLevels = [
+      { name: 'SDM-1 LEVEL', shiftstart: '', shiftend: '' },
+      { name: 'SDM-2 LEVEL', shiftstart: '', shiftend: '' },
+      { name: 'SDM-3 LEVEL', shiftstart: '', shiftend: '' },
+      { name: 'SDM-4 LEVEL', shiftstart: '', shiftend: '' },
+      { name: 'RESERVIOUR 1 LEVEL', shiftstart: '', shiftend: '' },
+      { name: 'RESERVIOUR 2 LEVEL', shiftstart: '', shiftend: '' },
+      { name: 'SUMP/PIT LEVEL', shiftstart: '', shiftend: '' },
+      { name: 'FW TANK 1 LEVEL', shiftstart: '', shiftend: '' },
+      { name: 'FW TANK 2 LEVEL', shiftstart: '', shiftend: '' },
+      { name: 'CONTROL ROOM TEMP.', shiftstart: '', shiftend: '' },
+      { name: 'BMCC 1 ROOM TEMP.', shiftstart: '', shiftend: '' },
+      { name: 'BMCC 2 ROOM TEMP.', shiftstart: '', shiftend: '' }
     ];
   }
 }
