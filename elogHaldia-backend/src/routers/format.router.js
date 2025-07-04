@@ -10,6 +10,7 @@ const formattsiunit3controller = require("../controllers/formattsiunit3.controll
 const formatlssuaeqpController = require("../controllers/formatlssuaeqp.controller");
 const formatisisController = require("../controllers/formatisis.controller");
 const formatboilerLogsheetController = require("../controllers/formatboiler-logsheet.controller");
+const bopLogsheetController = require("../controllers/boplogsheet.controller");
 const formatBoilerDamperStatusController = require("../controllers/boilerdamperstatus.controller");
 const formatBoilerHpdpAgitatorController = require("../controllers/boilerhpdpagitator.controller");
 const formatBoilerIdfanStatusController = require("../controllers/boileridfanstatus.controller"); // ✅ NEW
@@ -49,6 +50,10 @@ router.post("/getlsislanding", formatisisController.getIsisLanding);
 // Boiler logsheet
 router.post("/insertboilerandbop", formatboilerLogsheetController.insertBoilerAndBop);
 router.post("/getboilerandbop", formatboilerLogsheetController.getBoilerAndBop);
+
+// BOP Logsheet
+router.post("/insertboplogsheet", bopLogsheetController.insertBopLogsheet);
+router.post("/getboplogsheet", bopLogsheetController.getBopLogsheet);
 
 // Boiler Damper Status
 router.post("/insertboilerdamperstatus", formatBoilerDamperStatusController.insertboilerdamperstatus);

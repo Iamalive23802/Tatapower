@@ -44,6 +44,9 @@ export class UtilityEndpointsService {
     getboilerandbop: "format/getboilerandbop",
     insertboilerandbop: "format/insertboilerandbop",
 
+    getboplogsheet: "format/getboplogsheet",
+    insertboplogsheet: "format/insertboplogsheet",
+
     getboilerdamperstatus: "format/getboilerdamperstatus",
     insertboilerdamperstatus: "format/insertboilerdamperstatus",
 
