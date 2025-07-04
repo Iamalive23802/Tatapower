@@ -9,20 +9,20 @@
 
 <!-- BFP Unit 1,2 &3 -->
 <p-panel header="BFP Unit 1,2 &3" [toggleable]="true" [collapsed]="true" [iconPos]="'start'">
-  <table class="min-w-full text-xs border border-gray-300 border-collapse shadow">
+  <table class="min-w-full text-xs border border-gray-300 border-collapse shadow" style="width:100%;table-layout:fixed;">
     <thead class="bg-gray-100 font-semibold text-gray-800">
       <tr>
-        <th class="border p-2 text-center">Parameter</th>
-        <th class="border p-2 text-center">Unit</th>
-        <th class="border p-2 text-center">BFP1A</th>
-        <th class="border p-2 text-center">BFP1B</th>
-        <th class="border p-2 text-center">BFP1C</th>
-        <th class="border p-2 text-center">BFP2A</th>
-        <th class="border p-2 text-center">BFP2B</th>
-        <th class="border p-2 text-center">BFP2C</th>
-        <th class="border p-2 text-center">BFP3A</th>
-        <th class="border p-2 text-center">BFP3B</th>
-        <th class="border p-2 text-center">BFP3C</th>
+        <th class="border p-2 text-center" style="width:20%;">Parameter</th>
+        <th class="border p-2 text-center" style="width:7%;">Unit</th>
+        <th class="border p-2 text-center" style="width:7%;">BFP1A</th>
+        <th class="border p-2 text-center" style="width:7%;">BFP1B</th>
+        <th class="border p-2 text-center" style="width:7%;">BFP1C</th>
+        <th class="border p-2 text-center" style="width:7%;">BFP2A</th>
+        <th class="border p-2 text-center" style="width:7%;">BFP2B</th>
+        <th class="border p-2 text-center" style="width:7%;">BFP2C</th>
+        <th class="border p-2 text-center" style="width:7%;">BFP3A</th>
+        <th class="border p-2 text-center" style="width:7%;">BFP3B</th>
+        <th class="border p-2 text-center" style="width:7%;">BFP3C</th>
       </tr>
     </thead>
     <tbody>
@@ -40,8 +40,8 @@
         <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="bfpStatus.bfp3c" placeholder="Select"></p-dropdown></td>
       </tr>
       <tr *ngFor="let row of bfpUnit1and2Arr">
-        <td class="border p-2">{{ row.parameter }}</td>
-        <td class="border p-2 text-center">{{ row.unit }}</td>
+        <td class="border p-2" style="width:20%; word-wrap:break-word;">{{ row.parameter }}</td>
+        <td class="border p-2 text-center" style="width:7%;">{{ row.unit }}</td>
         <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp1a]" class="w-full text-xs p-1 border rounded" /></td>
         <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp1b]" class="w-full text-xs p-1 border rounded" /></td>
         <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp1c]" class="w-full text-xs p-1 border rounded" /></td>
