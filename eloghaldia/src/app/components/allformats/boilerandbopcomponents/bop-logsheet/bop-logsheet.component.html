@@ -209,6 +209,99 @@
   </table>
 </p-panel>
 
+<!-- Booster/Hotwell/Boiler Fill Pump & Compressor Status -->
+<p-panel header="Pump & Compressor Status" [toggleable]="true" [collapsed]="true" [iconPos]="'start'" class="mt-4">
+  <!-- Booster Pump Status -->
+  <table class="min-w-full text-xs border border-gray-300 border-collapse shadow">
+    <thead class="bg-gray-100 font-semibold text-gray-800">
+      <tr>
+        <th class="border p-2"></th>
+        <th class="border p-2 text-center">ACWB-1A</th>
+        <th class="border p-2 text-center">ACWB-1B</th>
+        <th class="border p-2 text-center">ACWB-2A</th>
+        <th class="border p-2 text-center">ACWB-2B</th>
+        <th class="border p-2 text-center">ACWB-3A</th>
+        <th class="border p-2 text-center">ACWB-3B</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border p-2 text-center">Booster Pump Status</td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb1a" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb1b" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb2a" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb2b" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb3a" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb3b" placeholder="Select"></p-dropdown></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Hotwell Pump Status -->
+  <table class="min-w-full text-xs border border-gray-300 border-collapse shadow mt-2">
+    <thead class="bg-gray-100 font-semibold text-gray-800">
+      <tr>
+        <th class="border p-2"></th>
+        <th class="border p-2 text-center">HWP-1</th>
+        <th class="border p-2 text-center">HWP-2</th>
+        <th class="border p-2 text-center">HWP-3</th>
+        <th class="border p-2 text-center">HWP-4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border p-2 text-center">Hotwell Pump Status</td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="hotwellPumpStatus.hwp1" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="hotwellPumpStatus.hwp2" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="hotwellPumpStatus.hwp3" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="hotwellPumpStatus.hwp4" placeholder="Select"></p-dropdown></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Boiler Fill Pump Status -->
+  <table class="min-w-full text-xs border border-gray-300 border-collapse shadow mt-2">
+    <thead class="bg-gray-100 font-semibold text-gray-800">
+      <tr>
+        <th class="border p-2"></th>
+        <th class="border p-2 text-center">BOILER FILL P/P-1</th>
+        <th class="border p-2 text-center">BOILER FILL P/P-2</th>
+        <th class="border p-2 text-center">BOILER FILL P/P-3</th>
+        <th class="border p-2 text-center">BOILER FILL P/P-4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border p-2 text-center">Boiler Fill Pump Status</td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boilerFillPumpStatus.p1" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boilerFillPumpStatus.p2" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boilerFillPumpStatus.p3" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boilerFillPumpStatus.p4" placeholder="Select"></p-dropdown></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Compressor Status -->
+  <table class="min-w-full text-xs border border-gray-300 border-collapse shadow mt-2">
+    <thead class="bg-gray-100 font-semibold text-gray-800">
+      <tr>
+        <th class="border p-2"></th>
+        <th class="border p-2 text-center">COMPRESSOR-A</th>
+        <th class="border p-2 text-center">COMPRESSOR-B</th>
+        <th class="border p-2 text-center">COMPRESSOR-C</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border p-2 text-center">Compressor Status</td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="compressorStatus.compA" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="compressorStatus.compB" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="compressorStatus.compC" placeholder="Select"></p-dropdown></td>
+      </tr>
+    </tbody>
+  </table>
+</p-panel>
+
 <!-- Room Temperatures & Tank Levels -->
 <p-panel header="Tank Levels & Room Temperatures" [toggleable]="true" [collapsed]="true" [iconPos]="'start'" class="mt-4">
   <table class="min-w-full text-xs border border-gray-300 border-collapse shadow">
