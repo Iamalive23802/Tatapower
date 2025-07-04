@@ -26,6 +26,19 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td class="border p-2 text-center font-semibold">Status</td>
+        <td class="border p-1"></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="bfpStatus.bfp1a" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="bfpStatus.bfp1b" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="bfpStatus.bfp1c" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="bfpStatus.bfp2a" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="bfpStatus.bfp2b" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="bfpStatus.bfp2c" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="bfpStatus.bfp3a" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="bfpStatus.bfp3b" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="bfpStatus.bfp3c" placeholder="Select"></p-dropdown></td>
+      </tr>
       <tr *ngFor="let row of bfpUnit1and2Arr">
         <td class="border p-2">{{ row.parameter }}</td>
         <td class="border p-2 text-center">{{ row.unit }}</td>
@@ -59,6 +72,16 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td class="border p-2 text-center font-semibold">Status</td>
+        <td class="border p-1"></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="acwStatus.acw1a" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="acwStatus.acw1b" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="acwStatus.acw2a" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="acwStatus.acw2b" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="acwStatus.acw3a" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="acwStatus.acw3b" placeholder="Select"></p-dropdown></td>
+      </tr>
       <tr *ngFor="let row of acwArr">
         <td class="border p-2">{{ row.parameter }}</td>
         <td class="border p-2">{{ row.unit }}</td>
