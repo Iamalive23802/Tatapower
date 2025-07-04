@@ -32,6 +32,8 @@ export class BopLogsheetComponent implements OnInit, OnChanges {
   hotwellPumpStatus: any = { hwp1: '', hwp2: '', hwp3: '', hwp4: '' };
   boilerFillPumpStatus: any = { p1: '', p2: '', p3: '', p4: '' };
   compressorStatus: any = { compA: '', compB: '', compC: '' };
+  bfpStatus: any = { bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '', bfp3a: '', bfp3b: '', bfp3c: '' };
+  acwStatus: any = { acw1a: '', acw1b: '', acw2a: '', acw2b: '', acw3a: '', acw3b: '' };
 
   pumpStatusOptions = [
     { label: 'Running', value: 'Running' },
