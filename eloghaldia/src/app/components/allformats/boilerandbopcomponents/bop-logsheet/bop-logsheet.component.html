@@ -82,7 +82,7 @@
         <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="acwStatus.acw3a" placeholder="Select"></p-dropdown></td>
         <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="acwStatus.acw3b" placeholder="Select"></p-dropdown></td>
       </tr>
-      <tr *ngFor="let row of acwArr">
+  <tr *ngFor="let row of acwArr">
         <td class="border p-2">{{ row.parameter }}</td>
         <td class="border p-2">{{ row.unit }}</td>
         <td class="border p-1"><input [(ngModel)]="row.acw1a" type="number" class="w-full text-xs p-1 border rounded" /></td>
@@ -91,6 +91,31 @@
         <td class="border p-1"><input [(ngModel)]="row.acw2b" type="number" class="w-full text-xs p-1 border rounded" /></td>
         <td class="border p-1"><input [(ngModel)]="row.acw3a" type="number" class="w-full text-xs p-1 border rounded" /></td>
         <td class="border p-1"><input [(ngModel)]="row.acw3b" type="number" class="w-full text-xs p-1 border rounded" /></td>
+  </tr>
+  </tbody>
+  </table>
+  <!-- Booster Pump Status -->
+  <table class="min-w-full text-xs border border-gray-300 border-collapse shadow mt-2">
+    <thead class="bg-gray-100 font-semibold text-gray-800">
+      <tr>
+        <th class="border p-2"></th>
+        <th class="border p-2 text-center">ACWB-1A</th>
+        <th class="border p-2 text-center">ACWB-1B</th>
+        <th class="border p-2 text-center">ACWB-2A</th>
+        <th class="border p-2 text-center">ACWB-2B</th>
+        <th class="border p-2 text-center">ACWB-3A</th>
+        <th class="border p-2 text-center">ACWB-3B</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border p-2 text-center">Booster Pump Status</td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb1a" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb1b" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb2a" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb2b" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb3a" placeholder="Select"></p-dropdown></td>
+        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb3b" placeholder="Select"></p-dropdown></td>
       </tr>
     </tbody>
   </table>
@@ -144,8 +169,8 @@
   </table>
 </p-panel>
 
-<!-- Valve Positions -->
-<p-panel header="Valve Positions" [toggleable]="true" [collapsed]="true" [iconPos]="'start'" class="mt-4">
+<!-- Valve Positions & Conductivity Parameters -->
+<p-panel header="Valve Positions & Conductivity Parameters" [toggleable]="true" [collapsed]="true" [iconPos]="'start'" class="mt-4">
   <table class="min-w-full text-xs border border-gray-300 border-collapse shadow">
     <thead class="bg-gray-100 font-semibold text-gray-800">
       <tr>
@@ -165,11 +190,8 @@
       </tr>
     </tbody>
   </table>
-</p-panel>
 
-<!-- Conductivity -->
-<p-panel header="Conductivity Parameters" [toggleable]="true" [collapsed]="true" [iconPos]="'start'" class="mt-4">
-  <table class="min-w-full text-xs border border-gray-300 border-collapse shadow">
+  <table class="min-w-full text-xs border border-gray-300 border-collapse shadow mt-2">
     <thead class="bg-gray-100 font-semibold text-gray-800">
       <tr>
         <th class="border p-2">Parameter</th>
@@ -193,26 +215,6 @@
 
 <!-- Service Water Pump Status -->
 <p-panel header="Service Water Pump Status" [toggleable]="true" [collapsed]="true" [iconPos]="'start'" class="mt-4">
-  <table class="min-w-full text-xs border border-gray-300 border-collapse shadow">
-    <thead class="bg-gray-100 font-semibold text-gray-800">
-      <tr>
-        <th class="border p-2"></th>
-        <th class="border p-2 text-center">SWP-1</th>
-        <th class="border p-2 text-center">SWP-2</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="border p-2 text-center">Service Water Pump Status</td>
-        <td class="border p-1">
-          <p-dropdown [options]="pumpStatusOptions" [(ngModel)]="serviceWaterPumpStatus.swp1" placeholder="Select"></p-dropdown>
-        </td>
-        <td class="border p-1">
-          <p-dropdown [options]="pumpStatusOptions" [(ngModel)]="serviceWaterPumpStatus.swp2" placeholder="Select"></p-dropdown>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 
   <table class="min-w-full text-xs border border-gray-300 border-collapse shadow mt-2">
     <thead class="bg-gray-100 font-semibold text-gray-800">
@@ -234,31 +236,7 @@
 
 <!-- Booster/Hotwell/Boiler Fill Pump & Compressor Status -->
 <p-panel header="Pump & Compressor Status" [toggleable]="true" [collapsed]="true" [iconPos]="'start'" class="mt-4">
-  <!-- Booster Pump Status -->
-  <table class="min-w-full text-xs border border-gray-300 border-collapse shadow">
-    <thead class="bg-gray-100 font-semibold text-gray-800">
-      <tr>
-        <th class="border p-2"></th>
-        <th class="border p-2 text-center">ACWB-1A</th>
-        <th class="border p-2 text-center">ACWB-1B</th>
-        <th class="border p-2 text-center">ACWB-2A</th>
-        <th class="border p-2 text-center">ACWB-2B</th>
-        <th class="border p-2 text-center">ACWB-3A</th>
-        <th class="border p-2 text-center">ACWB-3B</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="border p-2 text-center">Booster Pump Status</td>
-        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb1a" placeholder="Select"></p-dropdown></td>
-        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb1b" placeholder="Select"></p-dropdown></td>
-        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb2a" placeholder="Select"></p-dropdown></td>
-        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb2b" placeholder="Select"></p-dropdown></td>
-        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb3a" placeholder="Select"></p-dropdown></td>
-        <td class="border p-1"><p-dropdown [options]="pumpStatusOptions" [(ngModel)]="boosterPumpStatus.acwb3b" placeholder="Select"></p-dropdown></td>
-      </tr>
-    </tbody>
-  </table>
+
 
   <!-- Hotwell Pump Status -->
   <table class="min-w-full text-xs border border-gray-300 border-collapse shadow mt-2">

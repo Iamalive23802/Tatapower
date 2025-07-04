@@ -27,7 +27,6 @@ export class BopLogsheetComponent implements OnInit, OnChanges {
   conductivityArr: any[] = [];
   roomTempsArr: any[] = [];
   serviceWaterPumpLevels: any[] = [];
-  serviceWaterPumpStatus: any = { swp1: '', swp2: '' };
   boosterPumpStatus: any = { acwb1a: '', acwb1b: '', acwb2a: '', acwb2b: '', acwb3a: '', acwb3b: '' };
   hotwellPumpStatus: any = { hwp1: '', hwp2: '', hwp3: '', hwp4: '' };
   boilerFillPumpStatus: any = { p1: '', p2: '', p3: '', p4: '' };
@@ -191,10 +190,7 @@ export class BopLogsheetComponent implements OnInit, OnChanges {
       { name: 'RESERVIOUR 2 LEVEL', shiftstart: '', shiftend: '' },
       { name: 'SUMP/PIT LEVEL', shiftstart: '', shiftend: '' },
       { name: 'FW TANK 1 LEVEL', shiftstart: '', shiftend: '' },
-      { name: 'FW TANK 2 LEVEL', shiftstart: '', shiftend: '' },
-      { name: 'CONTROL ROOM TEMP.', shiftstart: '', shiftend: '' },
-      { name: 'BMCC 1 ROOM TEMP.', shiftstart: '', shiftend: '' },
-      { name: 'BMCC 2 ROOM TEMP.', shiftstart: '', shiftend: '' }
+      { name: 'FW TANK 2 LEVEL', shiftstart: '', shiftend: '' }
     ];
   }
 }
