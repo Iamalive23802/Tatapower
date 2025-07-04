@@ -14,8 +14,6 @@
       <tr>
         <th class="border p-2 text-center">Parameter</th>
         <th class="border p-2 text-center">Unit</th>
-        <th class="border p-2 text-center">Max</th>
-        <th class="border p-2 text-center">Min</th>
         <th class="border p-2 text-center">BFP1A</th>
         <th class="border p-2 text-center">BFP1B</th>
         <th class="border p-2 text-center">BFP1C</th>
@@ -28,8 +26,6 @@
       <tr *ngFor="let row of bfpUnit1and2Arr">
         <td class="border p-2">{{ row.parameter }}</td>
         <td class="border p-2 text-center">{{ row.unit }}</td>
-        <td class="border p-2 text-center">{{ row.max }}</td>
-        <td class="border p-2 text-center">{{ row.min }}</td>
         <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp1a]" class="w-full text-xs p-1 border rounded" /></td>
         <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp1b]" class="w-full text-xs p-1 border rounded" /></td>
         <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp1c]" class="w-full text-xs p-1 border rounded" /></td>
@@ -48,52 +44,48 @@
       <tr>
         <th class="border p-2 text-center">Parameter</th>
         <th class="border p-2 text-center">Unit</th>
-        <th class="border p-2 text-center">Max</th>
-        <th class="border p-2 text-center">Min</th>
-        <th class="border p-2 text-center">BFP3A</th>
-        <th class="border p-2 text-center">BFP3B</th>
-        <th class="border p-2 text-center">BFP3C</th>
+          <th class="border p-2 text-center">BFP3A</th>
+          <th class="border p-2 text-center">BFP3B</th>
+          <th class="border p-2 text-center">BFP3C</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let row of bfpUnit3Arr">
         <td class="border p-2">{{ row.parameter }}</td>
         <td class="border p-2 text-center">{{ row.unit }}</td>
-        <td class="border p-2 text-center">{{ row.max }}</td>
-        <td class="border p-2 text-center">{{ row.min }}</td>
-        <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp3a]" class="w-full text-xs p-1 border rounded" /></td>
-        <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp3b]" class="w-full text-xs p-1 border rounded" /></td>
-        <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp3c]" class="w-full text-xs p-1 border rounded" /></td>
+          <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp3a]" class="w-full text-xs p-1 border rounded" /></td>
+          <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp3b]" class="w-full text-xs p-1 border rounded" /></td>
+          <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp3c]" class="w-full text-xs p-1 border rounded" /></td>
       </tr>
     </tbody>
   </table>
 </p-panel>
 
 <!-- ACW -->
-<p-panel header="ACW Unit 1 & 2" [toggleable]="true" [collapsed]="true" [iconPos]="'start'" class="mt-4">
+<p-panel header="ACW Unit 1,2&3" [toggleable]="true" [collapsed]="true" [iconPos]="'start'" class="mt-4">
   <table class="min-w-full text-xs border border-gray-300 border-collapse shadow">
     <thead class="bg-gray-100 font-semibold text-gray-800">
       <tr>
         <th class="border p-2">Parameter</th>
         <th class="border p-2">Unit</th>
-        <th class="border p-2">Max</th>
-        <th class="border p-2">Min</th>
         <th class="border p-2">ACW1A</th>
         <th class="border p-2">ACW1B</th>
         <th class="border p-2">ACW2A</th>
         <th class="border p-2">ACW2B</th>
+        <th class="border p-2">ACW3A</th>
+        <th class="border p-2">ACW3B</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let row of acwArr">
         <td class="border p-2">{{ row.parameter }}</td>
         <td class="border p-2">{{ row.unit }}</td>
-        <td class="border p-2">{{ row.max }}</td>
-        <td class="border p-2">{{ row.min }}</td>
         <td class="border p-1"><input [(ngModel)]="row.acw1a" type="number" class="w-full text-xs p-1 border rounded" /></td>
         <td class="border p-1"><input [(ngModel)]="row.acw1b" type="number" class="w-full text-xs p-1 border rounded" /></td>
         <td class="border p-1"><input [(ngModel)]="row.acw2a" type="number" class="w-full text-xs p-1 border rounded" /></td>
         <td class="border p-1"><input [(ngModel)]="row.acw2b" type="number" class="w-full text-xs p-1 border rounded" /></td>
+        <td class="border p-1"><input [(ngModel)]="row.acw3a" type="number" class="w-full text-xs p-1 border rounded" /></td>
+        <td class="border p-1"><input [(ngModel)]="row.acw3b" type="number" class="w-full text-xs p-1 border rounded" /></td>
       </tr>
     </tbody>
   </table>
@@ -106,8 +98,6 @@
       <tr>
         <th class="border p-2">Parameter</th>
         <th class="border p-2">Unit</th>
-        <th class="border p-2">Max</th>
-        <th class="border p-2">Min</th>
         <th class="border p-2">CWPA</th>
         <th class="border p-2">CWPB</th>
         <th class="border p-2">CWPC</th>
@@ -118,8 +108,6 @@
       <tr *ngFor="let row of cwpArr">
         <td class="border p-2">{{ row.parameter }}</td>
         <td class="border p-2">{{ row.unit }}</td>
-        <td class="border p-2">{{ row.max }}</td>
-        <td class="border p-2">{{ row.min }}</td>
         <td class="border p-1"><input [(ngModel)]="row.cwpa" type="number" class="w-full text-xs p-1 border rounded" /></td>
         <td class="border p-1"><input [(ngModel)]="row.cwpb" type="number" class="w-full text-xs p-1 border rounded" /></td>
         <td class="border p-1"><input [(ngModel)]="row.cwpc" type="number" class="w-full text-xs p-1 border rounded" /></td>
@@ -129,8 +117,8 @@
   </table>
 </p-panel>
 
-<!-- CT Fans -->
-<p-panel header="CT Fan Status & Valve Position" [toggleable]="true" [collapsed]="true" [iconPos]="'start'" class="mt-4">
+<!-- CT Fans Status -->
+<p-panel header="CT Fans Status" [toggleable]="true" [collapsed]="true" [iconPos]="'start'" class="mt-4">
   <table class="min-w-full text-xs border border-gray-300 border-collapse shadow">
     <thead class="bg-gray-100 font-semibold text-gray-800">
       <tr>
@@ -138,8 +126,6 @@
         <th class="border p-2">Unit</th>
         <th class="border p-2">Status</th>
         <th class="border p-2">Current</th>
-        <th class="border p-2">LHS</th>
-        <th class="border p-2">RHS</th>
       </tr>
     </thead>
     <tbody>
@@ -150,6 +136,26 @@
           <p-dropdown [options]="statusOptions" [(ngModel)]="fan.status" placeholder="Select"></p-dropdown>
         </td>
         <td class="border p-1"><input [(ngModel)]="fan.current" type="number" class="w-full text-xs p-1 border rounded" /></td>
+      </tr>
+    </tbody>
+  </table>
+</p-panel>
+
+<!-- Valve Positions -->
+<p-panel header="Valve Positions" [toggleable]="true" [collapsed]="true" [iconPos]="'start'" class="mt-4">
+  <table class="min-w-full text-xs border border-gray-300 border-collapse shadow">
+    <thead class="bg-gray-100 font-semibold text-gray-800">
+      <tr>
+        <th class="border p-2">Name</th>
+        <th class="border p-2">Unit</th>
+        <th class="border p-2">LHS</th>
+        <th class="border p-2">RHS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fan of ctfansArr">
+        <td class="border p-2">{{ fan.name }}</td>
+        <td class="border p-2 text-center">{{ fan.unit }}</td>
         <td class="border p-1"><input [(ngModel)]="fan.lhs" type="number" class="w-full text-xs p-1 border rounded" /></td>
         <td class="border p-1"><input [(ngModel)]="fan.rhs" type="number" class="w-full text-xs p-1 border rounded" /></td>
       </tr>

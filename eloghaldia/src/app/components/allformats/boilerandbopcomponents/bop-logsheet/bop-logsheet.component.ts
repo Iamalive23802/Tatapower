@@ -103,41 +103,41 @@ export class BopLogsheetComponent implements OnInit, OnChanges {
 
   initializeArrays(): void {
     this.bfpUnit1and2Arr = [
-      { parameter: 'BFP CURRENT', unit: 'AMPS', max: 64, min: 'NA', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
-      { parameter: 'BFP SUCTION PR.', unit: 'KG/CM2', max: 7.8, min: 'NA', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
-      { parameter: 'BFP SUCTION TEMP.', unit: 'DegC', max: 158, min: 'NA', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
-      { parameter: 'BFP DISCHARGE PR.', unit: 'KG/CM2', max: 145, min: 'NA', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
-      { parameter: 'BFP DISCHARGE TEMP.', unit: 'DegC', max: 160, min: 'NA', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
-      { parameter: 'BFP MOTOR BRG. TEMP. (DE)', unit: 'DegC', max: 80, min: 'NA', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
-      { parameter: 'BFP MOTOR BRG. TEMP. (NDE)', unit: 'DegC', max: 80, min: 'NA', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
-      { parameter: 'BFP MOTOR MAX WINDING TEMP.', unit: 'DegC', max: 120, min: 'NA', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' }
+      { parameter: 'BFP CURRENT', unit: 'AMPS', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
+      { parameter: 'BFP SUCTION PR.', unit: 'KG/CM2', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
+      { parameter: 'BFP SUCTION TEMP.', unit: 'DegC', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
+      { parameter: 'BFP DISCHARGE PR.', unit: 'KG/CM2', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
+      { parameter: 'BFP DISCHARGE TEMP.', unit: 'DegC', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
+      { parameter: 'BFP MOTOR BRG. TEMP. (DE)', unit: 'DegC', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
+      { parameter: 'BFP MOTOR BRG. TEMP. (NDE)', unit: 'DegC', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' },
+      { parameter: 'BFP MOTOR MAX WINDING TEMP.', unit: 'DegC', bfp1a: '', bfp1b: '', bfp1c: '', bfp2a: '', bfp2b: '', bfp2c: '' }
     ];
 
     this.bfpUnit3Arr = [
-      { parameter: 'BFP CURRENT', unit: 'AMPS', max: 48, min: 'NA', bfp3a: '', bfp3b: '', bfp3c: '' },
-      { parameter: 'BFP SUCTION PR.', unit: 'KG/CM2', max: 8.2, min: 'NA', bfp3a: '', bfp3b: '', bfp3c: '' },
-      { parameter: 'BFP SUCTION TEMP.', unit: 'DegC', max: 160, min: 'NA', bfp3a: '', bfp3b: '', bfp3c: '' },
-      { parameter: 'BFP DISCHARGE PR.', unit: 'KG/CM2', max: 145, min: 'NA', bfp3a: '', bfp3b: '', bfp3c: '' },
-      { parameter: 'BFP DISCHARGE TEMP.', unit: 'DegC', max: 162, min: 'NA', bfp3a: '', bfp3b: '', bfp3c: '' },
-      { parameter: 'BFP MOTOR BRG. TEMP. (DE)', unit: 'DegC', max: 80, min: 'NA', bfp3a: '', bfp3b: '', bfp3c: '' },
-      { parameter: 'BFP MOTOR BRG. TEMP. (NDE)', unit: 'DegC', max: 80, min: 'NA', bfp3a: '', bfp3b: '', bfp3c: '' },
-      { parameter: 'BFP MOTOR MAX WINDING TEMP.', unit: 'DegC', max: 120, min: 'NA', bfp3a: '', bfp3b: '', bfp3c: '' }
+      { parameter: 'BFP CURRENT', unit: 'AMPS', bfp3a: '', bfp3b: '', bfp3c: '' },
+      { parameter: 'BFP SUCTION PR.', unit: 'KG/CM2', bfp3a: '', bfp3b: '', bfp3c: '' },
+      { parameter: 'BFP SUCTION TEMP.', unit: 'DegC', bfp3a: '', bfp3b: '', bfp3c: '' },
+      { parameter: 'BFP DISCHARGE PR.', unit: 'KG/CM2', bfp3a: '', bfp3b: '', bfp3c: '' },
+      { parameter: 'BFP DISCHARGE TEMP.', unit: 'DegC', bfp3a: '', bfp3b: '', bfp3c: '' },
+      { parameter: 'BFP MOTOR BRG. TEMP. (DE)', unit: 'DegC', bfp3a: '', bfp3b: '', bfp3c: '' },
+      { parameter: 'BFP MOTOR BRG. TEMP. (NDE)', unit: 'DegC', bfp3a: '', bfp3b: '', bfp3c: '' },
+      { parameter: 'BFP MOTOR MAX WINDING TEMP.', unit: 'DegC', bfp3a: '', bfp3b: '', bfp3c: '' }
     ];
 
     this.acwArr = [
-      { parameter: 'ACW CURRENT', unit: 'AMPS', max: 158, min: 'NA', acw1a: '', acw1b: '', acw2a: '', acw2b: '' },
-      { parameter: 'ACW DISCHARGE PR.', unit: 'KG/CM2', max: 'NA', min: 'NA', acw1a: '', acw1b: '', acw2a: '', acw2b: '' },
-      { parameter: 'ACW DISCH WATER HDR TEMP AFTER PHE', unit: 'DegC', max: 34, min: 'NA', acw1a: '', acw1b: '', acw2a: '', acw2b: '' },
-      { parameter: 'BOOSTER P/P DISCH WATER HDR TEMP AFTER PHE', unit: 'DegC', max: 37.8, min: 'NA', acw1a: '', acw1b: '', acw2a: '', acw2b: '' }
+      { parameter: 'ACW CURRENT', unit: 'AMPS', acw1a: '', acw1b: '', acw2a: '', acw2b: '', acw3a: '', acw3b: '' },
+      { parameter: 'ACW DISCHARGE PR.', unit: 'KG/CM2', acw1a: '', acw1b: '', acw2a: '', acw2b: '', acw3a: '', acw3b: '' },
+      { parameter: 'ACW DISCH WATER HDR TEMP AFTER PHE', unit: 'DegC', acw1a: '', acw1b: '', acw2a: '', acw2b: '', acw3a: '', acw3b: '' },
+      { parameter: 'BOOSTER P/P DISCH WATER HDR TEMP AFTER PHE', unit: 'DegC', acw1a: '', acw1b: '', acw2a: '', acw2b: '', acw3a: '', acw3b: '' }
     ];
 
     this.cwpArr = [
-      { parameter: 'CWP CURRENT', unit: 'AMPS', max: 75, min: 'NA', cwpa: '', cwpb: '', cwpc: '', cwpd: '' },
-      { parameter: 'CW DISCHARGE PR.', unit: 'KG/CM2', max: 2, min: 'NA', cwpa: '', cwpb: '', cwpc: '', cwpd: '' },
-      { parameter: 'CW THRUST BRG. TEMP.', unit: 'DegC', max: 80, min: 'NA', cwpa: '', cwpb: '', cwpc: '', cwpd: '' },
-      { parameter: 'CW MOTOR BRG. TEMP. (DE)', unit: 'DegC', max: 80, min: 'NA', cwpa: '', cwpb: '', cwpc: '', cwpd: '' },
-      { parameter: 'CW MOTOR BRG. TEMP. (NDE)', unit: 'DegC', max: 80, min: 'NA', cwpa: '', cwpb: '', cwpc: '', cwpd: '' },
-      { parameter: 'CW MOTOR MAX WINDING TEMP.', unit: 'DegC', max: 110, min: 'NA', cwpa: '', cwpb: '', cwpc: '', cwpd: '' }
+      { parameter: 'CWP CURRENT', unit: 'AMPS', cwpa: '', cwpb: '', cwpc: '', cwpd: '' },
+      { parameter: 'CW DISCHARGE PR.', unit: 'KG/CM2', cwpa: '', cwpb: '', cwpc: '', cwpd: '' },
+      { parameter: 'CW THRUST BRG. TEMP.', unit: 'DegC', cwpa: '', cwpb: '', cwpc: '', cwpd: '' },
+      { parameter: 'CW MOTOR BRG. TEMP. (DE)', unit: 'DegC', cwpa: '', cwpb: '', cwpc: '', cwpd: '' },
+      { parameter: 'CW MOTOR BRG. TEMP. (NDE)', unit: 'DegC', cwpa: '', cwpb: '', cwpc: '', cwpd: '' },
+      { parameter: 'CW MOTOR MAX WINDING TEMP.', unit: 'DegC', cwpa: '', cwpb: '', cwpc: '', cwpd: '' }
     ];
 
     this.ctfansArr = [
