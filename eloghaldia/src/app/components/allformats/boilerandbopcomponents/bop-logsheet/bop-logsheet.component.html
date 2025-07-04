@@ -42,15 +42,15 @@
       <tr *ngFor="let row of bfpUnit1and2Arr">
         <td class="border p-2" style="width:20%; word-wrap:break-word;">{{ row.parameter }}</td>
         <td class="border p-2 text-center" style="width:7%;">{{ row.unit }}</td>
-        <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp1a]" class="w-full text-xs p-1 border rounded" /></td>
-        <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp1b]" class="w-full text-xs p-1 border rounded" /></td>
-        <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp1c]" class="w-full text-xs p-1 border rounded" /></td>
-        <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp2a]" class="w-full text-xs p-1 border rounded" /></td>
-        <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp2b]" class="w-full text-xs p-1 border rounded" /></td>
-        <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp2c]" class="w-full text-xs p-1 border rounded" /></td>
-        <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp3a]" class="w-full text-xs p-1 border rounded" /></td>
-        <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp3b]" class="w-full text-xs p-1 border rounded" /></td>
-        <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp3c]" class="w-full text-xs p-1 border rounded" /></td>
+        <td class="border p-1"><input [(ngModel)]="row.bfp1a" class="w-full text-xs p-1 border rounded" /></td>
+        <td class="border p-1"><input [(ngModel)]="row.bfp1b" class="w-full text-xs p-1 border rounded" /></td>
+        <td class="border p-1"><input [(ngModel)]="row.bfp1c" class="w-full text-xs p-1 border rounded" /></td>
+        <td class="border p-1"><input [(ngModel)]="row.bfp2a" class="w-full text-xs p-1 border rounded" /></td>
+        <td class="border p-1"><input [(ngModel)]="row.bfp2b" class="w-full text-xs p-1 border rounded" /></td>
+        <td class="border p-1"><input [(ngModel)]="row.bfp2c" class="w-full text-xs p-1 border rounded" /></td>
+        <td class="border p-1"><input [(ngModel)]="row.bfp3a" class="w-full text-xs p-1 border rounded" /></td>
+        <td class="border p-1"><input [(ngModel)]="row.bfp3b" class="w-full text-xs p-1 border rounded" /></td>
+        <td class="border p-1"><input [(ngModel)]="row.bfp3c" class="w-full text-xs p-1 border rounded" /></td>
       </tr>
     </tbody>
   </table>
