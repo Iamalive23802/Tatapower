@@ -7,8 +7,8 @@
   Shift Name: {{ shiftName }}
 </div>
 
-<!-- BFP Unit 1 & 2 -->
-<p-panel header="BFP Unit 1 & 2" [toggleable]="true" [collapsed]="true" [iconPos]="'start'">
+<!-- BFP Unit 1,2 &3 -->
+<p-panel header="BFP Unit 1,2 &3" [toggleable]="true" [collapsed]="true" [iconPos]="'start'">
   <table class="min-w-full text-xs border border-gray-300 border-collapse shadow">
     <thead class="bg-gray-100 font-semibold text-gray-800">
       <tr>
@@ -20,6 +20,9 @@
         <th class="border p-2 text-center">BFP2A</th>
         <th class="border p-2 text-center">BFP2B</th>
         <th class="border p-2 text-center">BFP2C</th>
+        <th class="border p-2 text-center">BFP3A</th>
+        <th class="border p-2 text-center">BFP3B</th>
+        <th class="border p-2 text-center">BFP3C</th>
       </tr>
     </thead>
     <tbody>
@@ -32,30 +35,9 @@
         <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp2a]" class="w-full text-xs p-1 border rounded" /></td>
         <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp2b]" class="w-full text-xs p-1 border rounded" /></td>
         <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp2c]" class="w-full text-xs p-1 border rounded" /></td>
-      </tr>
-    </tbody>
-  </table>
-</p-panel>
-
-<!-- BFP Unit 3 -->
-<p-panel header="BFP Unit 3" [toggleable]="true" [collapsed]="true" class="mt-4" [iconPos]="'start'">
-  <table class="min-w-full text-xs border border-gray-300 border-collapse shadow">
-    <thead class="bg-gray-100 font-semibold text-gray-800">
-      <tr>
-        <th class="border p-2 text-center">Parameter</th>
-        <th class="border p-2 text-center">Unit</th>
-          <th class="border p-2 text-center">BFP3A</th>
-          <th class="border p-2 text-center">BFP3B</th>
-          <th class="border p-2 text-center">BFP3C</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let row of bfpUnit3Arr">
-        <td class="border p-2">{{ row.parameter }}</td>
-        <td class="border p-2 text-center">{{ row.unit }}</td>
-          <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp3a]" class="w-full text-xs p-1 border rounded" /></td>
-          <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp3b]" class="w-full text-xs p-1 border rounded" /></td>
-          <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp3c]" class="w-full text-xs p-1 border rounded" /></td>
+        <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp3a]" class="w-full text-xs p-1 border rounded" /></td>
+        <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp3b]" class="w-full text-xs p-1 border rounded" /></td>
+        <td class="border p-1"><input [(ngModel)]="bopObj[row.bfp3c]" class="w-full text-xs p-1 border rounded" /></td>
       </tr>
     </tbody>
   </table>
@@ -123,7 +105,6 @@
     <thead class="bg-gray-100 font-semibold text-gray-800">
       <tr>
         <th class="border p-2">Name</th>
-        <th class="border p-2">Unit</th>
         <th class="border p-2">Status</th>
         <th class="border p-2">Current</th>
       </tr>
@@ -131,7 +112,6 @@
     <tbody>
       <tr *ngFor="let fan of ctfansArr">
         <td class="border p-2">{{ fan.name }}</td>
-        <td class="border p-2 text-center">{{ fan.unit }}</td>
         <td class="border p-1">
           <p-dropdown [options]="statusOptions" [(ngModel)]="fan.status" placeholder="Select"></p-dropdown>
         </td>
@@ -146,18 +126,19 @@
   <table class="min-w-full text-xs border border-gray-300 border-collapse shadow">
     <thead class="bg-gray-100 font-semibold text-gray-800">
       <tr>
-        <th class="border p-2">Name</th>
-        <th class="border p-2">Unit</th>
+        <th class="border p-2" rowspan="2">Unit</th>
+        <th class="border p-2" colspan="2">CONDENSER CW O/L V/V POSITION</th>
+      </tr>
+      <tr>
         <th class="border p-2">LHS</th>
         <th class="border p-2">RHS</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let fan of ctfansArr">
-        <td class="border p-2">{{ fan.name }}</td>
-        <td class="border p-2 text-center">{{ fan.unit }}</td>
-        <td class="border p-1"><input [(ngModel)]="fan.lhs" type="number" class="w-full text-xs p-1 border rounded" /></td>
-        <td class="border p-1"><input [(ngModel)]="fan.rhs" type="number" class="w-full text-xs p-1 border rounded" /></td>
+      <tr *ngFor="let row of valvePosArr">
+        <td class="border p-2">{{ row.unit }}</td>
+        <td class="border p-1"><input [(ngModel)]="row.lhs" class="w-full text-xs p-1 border rounded" /></td>
+        <td class="border p-1"><input [(ngModel)]="row.rhs" class="w-full text-xs p-1 border rounded" /></td>
       </tr>
     </tbody>
   </table>
